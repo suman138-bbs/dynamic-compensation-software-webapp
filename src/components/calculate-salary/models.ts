@@ -1,0 +1,28 @@
+export type salaryFormType = {
+  name: string;
+  email: string;
+  age: string;
+  education: string;
+  contactNumber: string;
+  marks: string;
+  experienceInRank: string;
+  experienceInVessel: string;
+  mistakesPrevious: string;
+  higherCertificate: string;
+  averageOfAppraisala: string;
+  loyalty: string;
+  etoFilter: string;
+  shipAge: string;
+  rank: string;
+  shipRoute: string;
+  bridgeEcdis: string;
+  averageRest: string;
+  averagePortStay: string;
+  vettingDone: string;
+  rightShip: string;
+  pscDefic: string;
+  umsMann: string;
+  routeUs: string;
+  dryDocking: string;
+  shipType: string;
+};

@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18.x
+    commands:
+      - npm install -g firebase-tools yarn
+      # - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip -P ~/
+      # - unzip ~/sonar-scanner-cli-4.4.0.2170-linux.zip -d ~/
+      # - export PATH=$PATH:~/sonar-scanner-4.4.0.2170-linux/bin/
+  pre_build:
+    commands:
+      - aws s3 cp $S3_SERVICE_ACCOUNT_BUCKET_NAME/$S3_SERVICE_ACCOUNT_JSON_FILE ./
+      - export GOOGLE_APPLICATION_CREDENTIALS=$S3_SERVICE_ACCOUNT_JSON_FILE
+  build:
+    commands:
+      - npm install -g yarn
+      - rm -rf node_modules build
+      - yarn install --frozen-lockfile
+      - yarn build:${ENVIRONMENT}
+      # - yarn test:cov
+      # - ~/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner  -Dsonar.sources=src -Dsonar.tests=src -Dsonar.exclusions=**/node_modules/** -Dsonar.sourceEncoding=UTF-8 -Dsonar.test.inclusions=**/*.test.ts -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info -Dsonar.coverage.exclusions=**/*.js,src/main.ts,src/index.ts,src/polyfills.ts,**/*environment*.ts,**/*module.ts  -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.host.url=${SONAR_HOST} -Dsonar.login=${SONAR_TOKEN}
+      # - curl -u ${SONAR_TOKEN}":" -G --data-urlencode "projectKey=$SONAR_PROJECT_KEY" ${SONAR_HOST}/api/qualitygates/project_status > sonarqube_scanreport.json
+  post_build:
+    commands:
+      - firebase deploy --only hosting --project=${ENVIRONMENT}

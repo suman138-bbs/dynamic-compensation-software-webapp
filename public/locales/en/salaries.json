@@ -1,0 +1,11 @@
+{
+  "name": "NAME",
+  "rank": "RANK",
+  "experience": "EXPERIENCE",
+  "calculated-salary": "CALCULATED SALARY",
+  "date": "DATE",
+  "search": "Search",
+  "quarterly": "Quarterly",
+  "monthly": "Monthly",
+  "yearly": "Yearly"
+}

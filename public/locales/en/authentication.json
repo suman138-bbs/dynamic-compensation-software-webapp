@@ -1,0 +1,23 @@
+{
+  "sign-in-to-your-account": "Sign in to your account",
+  "email-address": "Email address",
+  "user-name": "Username",
+  "password": "Password",
+  "remember-me": "Remember me",
+  "sign-in": "Sign in",
+  "login": "Login",
+  "forgot-password": "Forgot password?",
+  "forgot-password-description": "Enter your email address and we will send you a link to reset your password.",
+  "remember-password": "Remember password?",
+  "continue": "Continue",
+  "reset-password": "Reset password",
+  "error-messages": {
+    "user-name-is-required": "Username is required",
+    "password-is-required": "Password is required",
+    "required-email": "Email is required",
+    "invalid-email-format": "Invalid email format"
+  },
+  "sign-in-successfully": "Sign in successfully",
+  "invalid-email-or-password": "Invalid email or password",
+  "reset-password-link-sent-successfully": "Reset password link sent successfully"
+}

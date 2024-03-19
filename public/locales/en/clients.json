@@ -1,0 +1,23 @@
+{
+  "first-name": "FIRST NAME",
+  "last-name": "LAST NAME",
+  "company-name": "COMPANY NAME",
+  "contact-details": "CONTACT DETAILS",
+  "email": "EMAIL",
+  "add-new": "Add New",
+  "filter": "Filter",
+  "create-client": {
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "company-name": "Company Name",
+    "contact-details": "Contact Details",
+    "email": "Email Address",
+    "company-address": "Company Address"
+  },
+  "create-now": "Create Now",
+  "update": "Update",
+  "required": "Required",
+  "update-success": "Client information has been successfully updated.",
+  "update-failer": "Failed to update client information.",
+  "delete-success": "Client  has been successfully deleted."
+}
